@@ -6,11 +6,23 @@ import './App.css'
 function App() {
   const [index, setIndex] = useState(0)
   const [qAndA, setQAndA] = useState([])
-  console.log(`checking useState: ${index}`)
 
   useEffect(() => {
     fetch('/Q&A.json').then((response) => response.json()).then((data) => {console.log('Fetched data:', data); setQAndA(data)})
   },[]);
+
+  const handleBtnClickNext = () => {
+    if (index === qAndA.length - 1){
+      return 
+    }
+    setIndex(index + 1)
+  }
+
+  const handleBtnClickPrev = () => {
+    if (index > 0){
+      setIndex(index - 1)
+    }
+  }
 
   return (
     <>
@@ -20,7 +32,10 @@ function App() {
         <div className='card-flex' >
           <FlashCard question={qAndA[index]?.question} answer={qAndA[index]?.answer}/>
         </div>
-        <button className="btn" type="button">{"-->"}</button>
+        <div className='btn-flex'> 
+          <button className="btn" type="button" onClick={handleBtnClickPrev}>{"<--"}</button>
+          <button className="btn" type="button" onClick={handleBtnClickNext}>{"-->"}</button>
+        </div>
       </div>
     </>
   )

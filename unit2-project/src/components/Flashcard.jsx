@@ -13,7 +13,7 @@ const FlashCard = (props) => {
             {flip === false ? 
                 <>
                     <div className="card-front">
-                    <img src={props.question} alt="Image" style={{ width: "80%", height: "auto" }} />
+                        <img src={props.question} alt="Image" style={{ width: "60%", height: "auto" }} />
                     </div>
                 </> 
                 : 
