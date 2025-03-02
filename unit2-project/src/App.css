@@ -34,6 +34,12 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card-front img {
+  width: 35%;
+  height: auto;
+  object-fit: contain;
+}
+
 .card-flip {
   transform: rotateY(180deg);
 }

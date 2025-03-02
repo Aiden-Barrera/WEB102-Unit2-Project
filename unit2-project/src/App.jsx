@@ -32,7 +32,7 @@ function App() {
         <div className='card-flex' >
           <FlashCard question={qAndA[index]?.question} answer={qAndA[index]?.answer}/>
         </div>
-        <div className='btn-flex'> 
+        <div className='btn-flex' style={{marginTop: "10px"}}> 
           <button className="btn" type="button" onClick={handleBtnClickPrev}>{"<--"}</button>
           <button className="btn" type="button" onClick={handleBtnClickNext}>{"-->"}</button>
         </div>

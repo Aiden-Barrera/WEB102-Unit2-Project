@@ -11,17 +11,13 @@ const FlashCard = (props) => {
     return (
         <div className={`card${flip ? "-flip" : ""}`} onClick={handleClick}>
             {flip === false ? 
-                <>
-                    <div className="card-front">
-                        <img src={props.question} alt="Image" style={{ width: "60%", height: "auto" }} />
-                    </div>
-                </> 
+                <div className="card-front">
+                    <img src={props.question} alt="Image"/>
+                </div>
                 : 
-                <>
-                    <div className="card-back" style={{ transform: "rotateY(180deg)"}}>
-                        <h1>{props.answer}</h1>
-                    </div>
-                </>
+                <div className="card-back" style={{ transform: "rotateY(180deg)"}}>
+                    <h1>{props.answer}</h1>
+                </div>
             }
         </div>
         
